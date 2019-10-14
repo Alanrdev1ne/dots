@@ -8,7 +8,7 @@ font xft:Hack 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -64,6 +64,7 @@ set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
+set $ws11 "11"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -118,10 +119,19 @@ gaps outer 10
 
 # Boot Executions
 exec_always compton
-exec_always feh --bg-scale ~/Pictures/wallpapers/rms.png
+exec_always feh --bg-scale ~/Pictures/wallpapers/retrowave-outrun-mountains-night-3l.jpg
 exec_always ~/.config/polybar/launch.sh
 exec_always xrdb ~/.Xresources
 exec nm-applet
 
 # Binds
-bindsym $mod+shift+x exec betterlockscreen -l dim
+bindsym $mod+e exec emacs
+bindsym $mod+b exec chromium
+bindsym $mod+shift+x exec betterlockscreen -l
+bindsym Print exec gscreenshot-cli -s -c
+
+
+# class                 border  backgr. text    indicator child_border
+client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340
+client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340
+client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #d9d9d9
