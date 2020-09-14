@@ -2,13 +2,13 @@
 set $mod Mod1
 
 # Set default font
-font xft:Hack 10
+font xft:Hack 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -29,10 +29,11 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # resize
-bindsym $mod+Shift+y exec --no-startup-id i3resize left
-bindsym $mod+Shift+u exec --no-startup-id i3resize down
-bindsym $mod+Shift+i exec --no-startup-id i3resize up
-bindsym $mod+Shift+o exec --no-startup-id i3resize right
+
+bindsym $mod+Shift+o resize shrink width  1 px or 1 ppt
+bindsym $mod+Shift+i resize grow   height 1 px or 1 ppt
+bindsym $mod+Shift+u resize shrink height 1 px or 1 ppt
+bindsym $mod+Shift+y resize grow   width  1 px or 1 ppt
 
 # split in horizontal orientation
 bindsym $mod+c split h
@@ -51,6 +52,14 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# bar config
+
+bar {
+    status_command i3status
+    position top
+    output primary
+}
 
 # Define names for default workspaces for which we configure key bindings later on.
 
@@ -102,13 +111,13 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Function Keys
+# Function Keys, works on my thinkpad
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer     -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume  exec --no-startup-id amixer     -q set Master 2dB- unmute
+bindsym XF86AudioMute         exec --no-startup-id amixer     -q set Master toggle
+bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Remove top Border
 for_window [class="^.*"] border pixel 1
@@ -118,18 +127,17 @@ gaps inner 10
 gaps outer 10
 
 # Boot Executions
-exec_always compton
-exec_always feh --bg-scale ~/Pictures/wallpapers/retrowave-outrun-mountains-night-3l.jpg
-exec_always ~/.config/polybar/launch.sh
+exec_always feh --bg-scale ~/Pictures/Wallpapers/lights.jpg
 exec_always xrdb ~/.Xresources
+exec_always picom
 exec nm-applet
 
 # Binds
 bindsym $mod+e exec emacs
-bindsym $mod+b exec chromium
+bindsym $mod+w exec firefox
 bindsym $mod+shift+x exec betterlockscreen -l
 bindsym Print exec gscreenshot-cli -s -c
-
+bindsym $mod+shift+n exec p3x-onenote
 
 # class                 border  backgr. text    indicator child_border
 client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340

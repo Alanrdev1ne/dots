@@ -15,16 +15,11 @@ plugins=(
     vi-mode
     colorize
     command-not-found
-    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # __Aliases__
-
-# College Stuff
-alias poodle="ssh -D8080 -Nf devina24@student.computing.dcu.ie"
-alias ff="firefox https://poodle.computing.dcu.ie/moodle/course/view.php?id=13 &"
 
 # configs
 alias virc="vim ~/.vimrc"
@@ -35,6 +30,7 @@ alias rzsh="source ~/.zshrc"
 # lazy shit
 alias c="clear"
 alias pacman="sudo pacman"
+alias vim="nvim"
 
 # git
 alias gstat="git status"
@@ -45,4 +41,5 @@ alias gc="git clone"
 alias gp="git push"
 
 # Sources
-source /usr/share/zsh/plugins/zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions
