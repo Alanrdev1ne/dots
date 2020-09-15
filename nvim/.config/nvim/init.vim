@@ -31,7 +31,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " typesetting
     Plug 'iamcco/markdown-preview.nvim'
-    Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -48,10 +47,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-" LaTex
-
-
 
 """ General Settings
 
