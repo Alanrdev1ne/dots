@@ -23,6 +23,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'honza/vim-snippets'
     Plug 'jmcantrell/vim-virtualenv'
 
+    " Version Control
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
+
     " quality of life
     Plug 'jiangmiao/auto-pairs'
     Plug 'terryma/vim-multiple-cursors'
