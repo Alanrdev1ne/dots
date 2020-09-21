@@ -40,6 +40,8 @@ alias c="clear"
 alias pacman="sudo pacman"
 alias vim="nvim"
 
+alias more="less"
+
 # git
 alias gstat="git status"
 alias gco="git checkout"
