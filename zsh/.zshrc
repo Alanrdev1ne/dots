@@ -22,9 +22,9 @@ source $ZSH/oh-my-zsh.sh
 # __Aliases__
 
 # configs
-alias virc="nvim ~/Documents/dots/nvim/.config/nvim/init.vim"
-alias zshr="nvim ~/Documents/dots/zsh/.zshrc"
-alias i3con="nvim ~/Documents/dots/i3/.config/i3/config"
+alias virc="nvim ~/dots/nvim/.config/nvim/init.vim"
+alias zshr="nvim ~/dots/zsh/.zshrc"
+alias i3con="nvim ~/dots/i3/.config/i3/config"
 alias rzsh="source ~/.zshrc"
 
 # lazy shit
