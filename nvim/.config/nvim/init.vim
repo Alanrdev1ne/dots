@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'itchyny/lightline.vim'
     Plug 'frazrepo/vim-rainbow'
     Plug 'morhetz/gruvbox'
+    Plug 'arcticicestudio/nord-vim'
 
     " programming
     Plug 'valloric/YouCompleteMe'
@@ -66,7 +67,7 @@ set autoindent
 
 " visual
 
-colorscheme gruvbox
+colorscheme nord
 
 set nu
 syntax on
