@@ -21,6 +21,9 @@ source $ZSH/oh-my-zsh.sh
 
 # __Aliases__
 
+# reboot to bios
+alias rebootbios="systemctl reboot --firmware-setup"
+
 # configs
 alias virc="nvim ~/dots/nvim/.config/nvim/init.vim"
 alias zshr="nvim ~/dots/zsh/.zshrc"
