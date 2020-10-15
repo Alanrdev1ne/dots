@@ -55,11 +55,11 @@ bindsym $mod+a focus parent
 
 # bar config
 
-bar {
-    status_command i3status
-    position top
-    output primary
-}
+# bar {
+#     status_command i3blocks
+#     position top
+#     output primary
+# }
 
 # Define names for default workspaces for which we configure key bindings later on.
 
@@ -131,6 +131,7 @@ exec_always feh --bg-scale ~/Pictures/Wallpapers/lights.jpg
 exec_always xrdb ~/.Xresources
 exec_always picom
 exec nm-applet
+exec_always $HOME/.config/polybar/launch.sh
 
 # Binds
 bindsym $mod+e exec emacs
