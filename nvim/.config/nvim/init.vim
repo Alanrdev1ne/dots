@@ -3,6 +3,8 @@
 
 """ Plugin Downloads
 
+" vim-plug is a dependencie -> https://github.com/junegunn/vim-plug
+
 call plug#begin('~/.config/nvim/plugged')
 
     " files
