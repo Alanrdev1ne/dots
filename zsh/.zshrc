@@ -36,12 +36,16 @@ alias pacman="sudo pacman"
 alias vim="nvim"
 
 # git
-alias gstat="git status"
+alias gss="git status"
 alias gco="git checkout"
 alias gcm="git commit -a"
 alias gin="git init"
 alias gc="git clone"
 alias gp="git push"
+
+# Exports
+export GOPATH=$HOME/go
+
 
 # Sources
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
