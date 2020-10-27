@@ -53,13 +53,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# bar config
+bindsym $mod+Shift+bracketleft move workspace to output left
+bindsym $mod+Shift+bracketright move workspace to output right
 
-# bar {
-#     status_command i3blocks
-#     position top
-#     output primary
-# }
 
 # Define names for default workspaces for which we configure key bindings later on.
 
@@ -73,7 +69,6 @@ set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
-set $ws11 "11"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -102,6 +97,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Workspace Assignment:
 #   use xprop to get class
 
+for_window [class="Thunderbird"] move to workspace $ws8
 for_window [class="discord"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws10
 
@@ -123,22 +119,28 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 for_window [class="^.*"] border pixel 1
 
 # Gaps
-gaps inner 10
-gaps outer 10
+gaps inner 20
+gaps outer 20
 
 # Boot Executions
-exec_always feh --bg-scale ~/Pictures/Wallpapers/lights.jpg
+exec_always feh --bg-fill ~/Pictures/Wallpapers/ye.png
 exec_always xrdb ~/.Xresources
-exec_always picom
-exec nm-applet
+exec_always picom -c $HOME/.config/picom/picom.conf
 exec_always $HOME/.config/polybar/launch.sh
+exec_always $HOME/.screenlayout/screenlayout.sh
+
+exec spotify
+exec discord-canary
+exec thunderbird
 
 # Binds
-bindsym $mod+e exec emacs
-bindsym $mod+w exec firefox
-bindsym $mod+shift+x exec betterlockscreen -l
-bindsym Print exec gscreenshot-cli -s -c
-bindsym $mod+shift+n exec p3x-onenote
+bindsym $mod+e          exec emacs
+bindsym $mod+w          exec firefox
+bindsym $mod+shift+x    exec betterlockscreen -l
+bindsym --release Print exec escrotum -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+
+bindsym $mod+n          exec typora ~/College
+bindsym $mod+shift+n    exec p3x-onenote
 
 # class                 border  backgr. text    indicator child_border
 client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340
