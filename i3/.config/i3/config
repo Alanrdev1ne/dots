@@ -9,6 +9,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec kitty "ranger"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -125,19 +126,20 @@ gaps outer 20
 # Boot Executions
 exec_always feh --bg-fill ~/Pictures/Wallpapers/ye.png
 exec_always xrdb ~/.Xresources
-exec_always picom -c $HOME/.config/picom/picom.conf
+exec_always picom --config $HOME/.config/picom/picom.conf
 exec_always $HOME/.config/polybar/launch.sh
 exec_always $HOME/.screenlayout/screenlayout.sh
 
 exec spotify
-exec discord-canary
 exec thunderbird
 
 # Binds
 bindsym $mod+e          exec emacs
 bindsym $mod+w          exec firefox
 bindsym $mod+shift+x    exec betterlockscreen -l
-bindsym --release Print exec escrotum -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+bindsym --release Print exec $HOME/.scripts/screenshot
+
+bindsym $mod+s          exec pavucontrol
 
 bindsym $mod+n          exec typora ~/College
 bindsym $mod+shift+n    exec p3x-onenote
