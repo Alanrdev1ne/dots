@@ -40,7 +40,9 @@ alias c="clear"
 alias pacman="sudo pacman"
 alias vim="nvim"
 
-alias more="less"
+# I can't spell
+alias suod="sudo"
+
 
 # git
 alias gstat="git status"
